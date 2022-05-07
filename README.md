@@ -79,24 +79,13 @@ The function should perform the following steps:
 
 Read all three datasets.
 charges_data has some missing values in the monthlyCharges and totalCharges columns.
-Fill in the missing values in the monthlyCharges column with the trimmed average of non-empty observations from this column. To calculate a trimmed average, reject 10% of the biggest and 10% of the smallest values from calculations. Round the final value to the nearest integer.
+Fill in the missing values in the monthlyCharges column with the trimmed average of non-empty observations from this column. 
+To calculate a trimmed average, reject 10% of the biggest and 10% of the smallest values from calculations. Round the final value to the nearest integer.
 Then fill in the missing values in the totalCharges column with the monthlyCharges value multiplied by the tenure value.
 Create a new column, tenureBinned, by discretizing the original tenure column. The tenureBinned column should take the values group1, group2, group3 and group4 when the values of tenure are within the respective ranges (0, 24], (24, 48], (48, 60] and (60, Inf).
 Calculate the churn rate, that is the percentage of churned customers, and round the result to the nearest integer e.g. If the fraction of such people in the dataset is 0.1234, then the desired value should be equal to 12.
-Join the updated charges_data with personal_data by the customerID column so that the resulting dataset has only rows with common customer IDs. Then, join the resulting dataset with plan_data by customerID, this time leaving all rows from the first dataset (joined charges_data and personal_data).
+Join the updated charges_data with personal_data by the customerID column so that the resulting dataset has only rows with common customer IDs. 
+Then, join the resulting dataset with plan_data by customerID, this time leaving all rows from the first dataset (joined charges_data and personal_data).
 Using the merged data, calculate the percentage of customers who are more than 60 years old and round the result to the nearest integer; e.g. if the fraction of such people in the dataset is 0.6789, then the desired value should be equal to 68.
 Using the merged data , create a dictionary containing counts of unique values in the internetService column, where keys are the unique values of items and their counts.
-The function exploratory_analysis() returns a dictionary with the following values:
 
-monthly_charges_mean - an integer with a calculated trimmed average from monthlyCharges values (calculated before filling in missing values and including three missing values);
-charges_data_updated - a dataframe with updated charges_data, that is with filled values in the columns monthlyCharges and totalCharges and an added tenureBinned column;
-churn_pet - an integer with the churn rate (as a percentage);
-data_merged - a data frame with three joined datasets;
-pct_age_above_60 - an integer giving the percentage of customers older than 60;
-internet_service_counts - a dictionary with InternetService value counts.
-Package versions
-Additionally to the Python 3.8 Standard Library, you may use the following packages:
-
-Pandas
-Numpy
-Scipy
