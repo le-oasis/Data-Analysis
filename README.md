@@ -75,17 +75,21 @@ Your task is to perform explanatory analysis and data manipulation.
 
 In order to complete the task you must write a function named explanatory_analysis() that takes three arguments, charges_data_path, personal_data_dath, and plan_data_path, which are the paths to the respective datasets.
 
+Task details
+
+In order to complete the task you must write a function named explanatory_analysis() that takes three arguments, charges_data_path, personal_data_dath, and plan_data_path, which are the paths to the respective datasets.
+
 The function should perform the following steps:
 
-Read all three datasets.
-charges_data has some missing values in the monthlyCharges and totalCharges columns.
-Fill in the missing values in the monthlyCharges column with the trimmed average of non-empty observations from this column. 
-To calculate a trimmed average, reject 10% of the biggest and 10% of the smallest values from calculations. Round the final value to the nearest integer.
-Then fill in the missing values in the totalCharges column with the monthlyCharges value multiplied by the tenure value.
-Create a new column, tenureBinned, by discretizing the original tenure column. The tenureBinned column should take the values group1, group2, group3 and group4 when the values of tenure are within the respective ranges (0, 24], (24, 48], (48, 60] and (60, Inf).
-Calculate the churn rate, that is the percentage of churned customers, and round the result to the nearest integer e.g. If the fraction of such people in the dataset is 0.1234, then the desired value should be equal to 12.
-Join the updated charges_data with personal_data by the customerID column so that the resulting dataset has only rows with common customer IDs. 
-Then, join the resulting dataset with plan_data by customerID, this time leaving all rows from the first dataset (joined charges_data and personal_data).
-Using the merged data, calculate the percentage of customers who are more than 60 years old and round the result to the nearest integer; e.g. if the fraction of such people in the dataset is 0.6789, then the desired value should be equal to 68.
-Using the merged data , create a dictionary containing counts of unique values in the internetService column, where keys are the unique values of items and their counts.
+* Read all three datasets.
+* charges_data has some missing values in the monthlyCharges and totalCharges columns.
+* Fill in the missing values in the monthlyCharges column with the trimmed average of non-empty observations from this column. 
+* To calculate a trimmed average, reject 10% of the biggest and 10% of the smallest values from calculations. Round the final value to the nearest integer.
+* Then fill in the missing values in the totalCharges column with the monthlyCharges value multiplied by the tenure value.
+* Create a new column, tenureBinned, by discretizing the original tenure column. The tenureBinned column should take the values group1, group2, group3 and group4 when the values of tenure are within the respective ranges (0, 24], (24, 48], (48, 60] and (60, Inf).
+* Calculate the churn rate, that is the percentage of churned customers, and round the result to the nearest integer e.g. If the fraction of such people in the dataset is 0.1234, then the desired value should be equal to 12.
+* Join the updated charges_data with personal_data by the customerID column so that the resulting dataset has only rows with common customer IDs. 
+* Then, join the resulting dataset with plan_data by customerID, this time leaving all rows from the first dataset (joined charges_data and personal_data).
+* Using the merged data, calculate the percentage of customers who are more than 60 years old and round the result to the nearest integer; e.g. if the fraction of such people in the dataset is 0.6789, then the desired value should be equal to 68.
+* Using the merged data , create a dictionary containing counts of unique values in the internetService column, where keys are the unique values of items and their counts.
 
