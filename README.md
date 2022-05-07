@@ -33,6 +33,8 @@ Questions:
 
 ## Project:1 -  Supermarket Sales Data 
 
+Dataset Link: https://github.com/le-oasis/Data-Analysis/blob/main/sales_data.csv
+
 Problem Statment:
 In the year 2013, a supermarket decided to draw insight from their data in order to make data driven decisions. As a Data Analyst,you are presented with their 2013 daily sales records (sales_data.csv) and tasked to help them find answers to the questions below by analysing the data.
 
